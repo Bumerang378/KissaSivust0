@@ -70,13 +70,15 @@
       border-radius: 10px;
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+      transform-style: preserve-3d; /* Enables 3D transformations */
     }
 
     /* Hover-efekti kuville */
     #cat-gallery img:hover, #favorites-gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05) rotate(5deg); /* Slight rotation */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow */
+      border: 2px solid #ff5722; /* Add a border */
     }
 
     /* Painikkeet */
@@ -88,7 +90,7 @@
       max-width: 300px;
       border-radius: 5px;
       border: none;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Lisätään taustavärin siirtymä ja skaalaus */
       color: #fff; /* Valkoinen teksti */
       -webkit-text-stroke: 0.3px black;
       font-weight: bold;
@@ -107,8 +109,22 @@
       background-color: #d32f2f; /* Punainen painike */
     }
 
+    /* Hover-efekti painikkeille */
     .btn-custom:hover {
       background-color: #e64a19; /* Tummentaa oranssia hover-tilassa */
+      transform: scale(1.05); /* Slightly enlarge the button */
+    }
+
+    #new-cat:hover {
+      background-color: #e65100; /* Darker shade for new cat button */
+    }
+
+    #show-favorites:hover {
+      background-color: #c62828; /* Darker shade for show favorites button */
+    }
+
+    #clear-favorites:hover {
+      background-color: #b71c1c; /* Darker shade for clear favorites button */
     }
 
     /* Suosikit-osio */
