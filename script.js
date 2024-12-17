@@ -25,6 +25,7 @@ function fetchCatImages(count = 5) {
         gallery.appendChild(img);
       });
       lazyLoadImages();
+      addTiltEffect(); // Add tilt effect to images
     })
     .catch(error => {
       console.error('Virhe kissakuvien hakemisessa:', error);
@@ -62,6 +63,7 @@ function updateFavoritesGallery() {
       favoritesGallery.appendChild(img);
     });
     lazyLoadImages();
+    addTiltEffect(); // Add tilt effect to images
   }
 }
 
@@ -134,4 +136,34 @@ function lazyLoadImages() {
     window.addEventListener("resize", lazyLoad);
     window.addEventListener("orientationchange", lazyLoad);
   }
+}
+
+// Add tilt effect to images
+function addTiltEffect() {
+  const images = document.querySelectorAll('#cat-gallery img, #favorites-gallery img');
+
+  images.forEach(image => {
+    image.addEventListener('mouseenter', function() {
+      image.style.transition = 'transform 0.1s ease-out';
+    });
+
+    image.addEventListener('mouseleave', function() {
+      image.style.transition = 'transform 0.3s ease-out';
+      image.style.transform = 'scale(1)';
+    });
+
+    image.addEventListener('mousemove', function(e) {
+      const rect = image.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const deltaX = (x - centerX) / centerX;
+      const deltaY = (y - centerY) / centerY;
+      const tiltX = deltaX * 15; // Increase the multiplier for more tilt
+      const tiltY = deltaY * 15; // Increase the multiplier for more tilt
+
+      image.style.transform = `rotateX(${tiltY}deg) rotateY(${tiltX}deg) scale(1.05)`;
+    });
+  });
 }
