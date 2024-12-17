@@ -15,9 +15,9 @@
 
     /* Perustyylit */
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Helvetica', sans-serif;
       background-color: #ff7043; /* Oranssin sävyinen tausta */
-      color: #333;
+      color: #fff; /* Valkoinen teksti */
       padding: 20px;
       position: relative;
       height: 100%; /* Varmistaa, että body täyttää koko näytön */
@@ -28,21 +28,25 @@
     h1 {
       text-align: center;
       font-size: 2.5em;
-      color: #fff7e6; /* Vaalea kultainen teksti */
+      color: #fff; /* Valkoinen teksti */
       margin-bottom: 20px;
+      -webkit-text-stroke: 1px black;
+      font-weight: bold;
     }
 
     h2 {
       text-align: center;
       font-size: 2em;
-      color: #fff7e6;
+      color: #fff; /* Valkoinen teksti */
       margin-top: 20px;
+      -webkit-text-stroke: 1px black;
+      font-weight: bold;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      background-color: #ff5722; /* Tumma oranssi tausta */
+      background-color: #ff5622d1; /* Tumma oranssi tausta */
       padding: 40px 20px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -85,21 +89,21 @@
       border-radius: 5px;
       border: none;
       transition: background-color 0.3s ease;
+      color: #fff; /* Valkoinen teksti */
+      -webkit-text-stroke: 0.3px black;
+      font-weight: bold;
     }
 
     #new-cat {
       background-color: #f57c00; /* Kirkas oranssi painike */
-      color: #fff7e6;
     }
 
     #show-favorites {
       background-color: #f52900; /* Tumma oranssi painike */
-      color: #fff7e6;
     }
 
     #clear-favorites {
       background-color: #d32f2f; /* Punainen painike */
-      color: #fff7e6;
     }
 
     .btn-custom:hover {
@@ -152,7 +156,7 @@
       text-align: center;
       margin-top: 50px;
       font-size: 1.2em;
-      color: #fff7e6;
+      color: #fff; /* Valkoinen teksti */
     }
 
     footer a {
